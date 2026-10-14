@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Result</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #192b3d;
+            background: #f3f6fa;
+        }
+
+        body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        main {
+            background: #fff;
+            border: 1px solid #dce4ed;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #174a78;
+        }
+
+        dt {
+            margin-top: 16px;
+            color: #52677b;
+            font-weight: 700;
+        }
+
+        dd {
+            margin: 4px 0 0;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 11px 18px;
+            border-radius: 7px;
+            background: #1769aa;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Your result</h1>
+        <dl>
+            <dt>Name</dt>
+            <dd id="result-name"></dd>
+            <dt>Email</dt>
+            <dd id="result-email"></dd>
+            <dt>Score</dt>
+            <dd id="result-score"></dd>
+        </dl>
+        <a href="about.html">Return to the lesson</a>
+    </main>
+
+    <script>
+        const parameters = new URLSearchParams(window.location.search);
+        document.getElementById("result-name").textContent = parameters.get("name") || "";
+        document.getElementById("result-email").textContent = parameters.get("email") || "";
+        const score = parameters.get("score");
+        document.getElementById("result-score").textContent =
+            score !== null && /^[0-9]+$/.test(score) ? score + " / 10" : "Not available";
+    </script>
+</body>
+</html>

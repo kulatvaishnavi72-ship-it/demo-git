@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hibernate Basics</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #192b3d;
+            background: #f3f6fa;
+        }
+
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+            line-height: 1.65;
+        }
+
+        header, article, .callout {
+            background: #fff;
+            border: 1px solid #dce4ed;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            line-height: 1.25;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #174a78;
+        }
+
+        h2 {
+            color: #245f91;
+        }
+
+        code {
+            background: #edf3f8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .keywords {
+            color: #42566b;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 7px;
+            background: #1769aa;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .button:hover, .button:focus {
+            background: #104d80;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hibernate: an introduction</h1>
+        <p>
+            Hibernate is an object-relational mapping (ORM) framework for Java.
+            It helps applications store and retrieve Java objects in a relational
+            database without requiring every database operation to be written as
+            low-level SQL.
+        </p>
+    </header>
+
+    <article>
+        <h2>Object-relational mapping</h2>
+        <p>
+            A relational database stores data in tables and rows, while Java
+            programs work with objects and classes. Hibernate connects these
+            models through mapping metadata. An <strong>entity</strong> is a
+            Java class mapped to a database table; its fields correspond to
+            columns and its instances correspond to rows. This mapping can be
+            described with annotations or configuration.
+        </p>
+
+        <h2>Sessions and transactions</h2>
+        <p>
+            A Hibernate <strong>Session</strong> is the main interface for
+            interacting with persistent objects. Applications use it to save,
+            find, update, or delete entities. Database changes should be grouped
+            in a <strong>transaction</strong>, which can be committed when all
+            operations succeed or rolled back if a failure occurs.
+        </p>
+
+        <h2>Queries and database support</h2>
+        <p>
+            Hibernate Query Language (<strong>HQL</strong>) queries entities
+            and their properties rather than database tables and columns.
+            Hibernate translates queries into SQL for the configured database.
+            A database <strong>dialect</strong> tells Hibernate which SQL
+            features and syntax to use. Associations between entities are
+            configured through their <strong>mapping</strong>.
+        </p>
+
+        <h2>Persistence and caching</h2>
+        <p>
+            <strong>Persistence</strong> is the process of keeping application
+            data after a program finishes. Hibernate tracks changes to managed
+            entities and can write those changes to the database when a
+            transaction is committed. A first-level <strong>cache</strong>
+            within a session can avoid repeated database reads for the same
+            entity.
+        </p>
+
+        <h2>Hibernate and Spring JDBC</h2>
+        <p>
+            Both technologies help Java applications work with relational
+            databases, but they take different approaches. Hibernate maps
+            objects to tables and manages entity state. Spring JDBC simplifies
+            JDBC access while leaving SQL and row-to-object mapping more
+            directly under the developer's control. Choose the approach that
+            fits the application's data model and desired level of abstraction.
+        </p>
+    </article>
+
+    <section class="callout">
+        <h2>Check your understanding</h2>
+        <p class="keywords">
+            Your summary will be checked for these key concepts:
+            Hibernate, ORM, entity, session, transaction, HQL, mapping,
+            persistence, dialect, and cache.
+        </p>
+        <a class="button" href="test.html">Test</a>
+    </section>
+</body>
+</html>
